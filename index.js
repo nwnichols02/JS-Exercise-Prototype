@@ -119,10 +119,28 @@ Car.prototype.fill = function(numOfGallons) {
   return this.tank
 }
 
-const kia = new Car('Kia', '32 MPG')
+Car.prototype.drive = function(distance){
+  const availableMiles = this.tank * this.milesPerGallon
+  if(distance > this.tank * this.milesPerGallon){
+    this.odometer = this.odometer + distance
+    let minusFuel = distance/this.milesPerGallon 
+    this.tank = this.tank - minusFuel
+    console.log (`I ran out of fuel at ${availableMiles +this.odometer - distance} miles!`)
+  } else {
+  this.odometer = this.odometer + distance
+  let minusFuel = distance/this.milesPerGallon 
+  this.tank = this.tank - minusFuel
+  }
+}
 
-kia.fill(30)
+const kia = new Car('Kia', 32)
+
+
+
 console.log(kia)
+kia.fill(2)
+kia.drive(65)
+// console.log(kia)
 
 /*
   TASK 3
