@@ -165,10 +165,10 @@ const brady = new Baby('Brady', 3, 'trains')
 /* 
   TASK 4
   In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
-  3. 
-  4. 
+  1. Window Binding - bad practice, it is binding this to the window object because you haven't defined it yet. 
+  2. Implicit Binding - binding is implied when we invoke the function. 'this' is referring to what's left of the dot.
+  3. Explicit Binding - would be when we .call, .bind. or .apply either immediately invoking the function or not and passing in the arguments 1 by 1 or as an array
+  4. New Binding - When a function is invoked as a constructor using new keyword and creates a new object
 */
 
 
